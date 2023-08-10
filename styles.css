@@ -1,0 +1,174 @@
+html{
+  box-sizing: border-box;
+}
+/* resetting the box model */
+
+body{
+  font-family: sans-serif;
+  color: #0a0a23;
+}
+
+/* The CSS you are about to write is a common set 
+of properties used to ensure elements are completely hidden visually. */
+span[class~="sr-only"]{
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  clip-path: inset(50%) !important;
+  /* you need to size these elements down */
+  width: 1px !important;
+  height: 1px !important;
+  /* To prevent the text content from overflowing */
+  overflow: hidden !important;
+  white-space: nowrap !important;
+  /* This will ensure that not only are they 
+  no longer visible, but they are not even within the page view. */
+  position: absolute !important;
+  padding: 0 !important;
+  margin: -1px !important;
+}
+/* selector will select any span element whose class includes sr-only */
+/* The CSS clip property is used to define the visible portions of an element. 
+Set the span[class~="sr-only"] selector to have a clip property of rect(1px, 1px, 1px, 1px). */
+/* The clip-path property determines the shape the clip property should take. 
+Set the clip-path property to the value of inset(50%), 
+forming the clip-path into a rectangle within the element. */
+
+h1{
+  max-width: 37.25rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem;
+}
+
+h1 .flex{
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 1rem;
+}
+
+/* The :first-of-type pseudo-selector is used 
+to target the first element that matches the selector */
+h1 .flex span:first-of-type{
+font-size: 0.7em;
+}
+
+h1 .flex span:last-of-type{
+  font-size: 1.2em;
+}
+
+section{
+  max-width: 40rem;
+  margin: 0 auto;
+  border: 2px solid #d0d0d5;
+}
+
+#years{
+  display: flex;
+  justify-content: flex-end;
+  /* Fix it to the top of its container with */
+  position: sticky;
+  top: 0;
+  color: #fff;
+  background: #0a0a23;
+  margin: 0 -2px;
+  padding: 0.5rem calc(1.25rem + 2px) 0.5rem 0;
+  /* ensure your #years element does not get hidden by different stacks */
+  z-index: 999;
+}
+
+#years span[class]{
+  font-weight: bold;
+  width: 4.5rem;
+  text-align: right;
+}
+
+
+.table-wrap{
+  padding: 0 0.75rem 1.5rem 0.75rem;
+}
+
+
+table{
+  /* which will allow cell borders to collapse into a single border, 
+  instead of a border around each cell.  */
+  border-collapse: collapse;
+  border: 0;
+  width: 100%;
+  position: relative;
+  margin-top: 3rem;
+}
+
+table caption{
+  color: #356eaf;
+  font-size: 1.3em;
+  font-weight: normal;
+  position: absolute;
+  top: -2.25rem;
+  left: 0.5rem;
+}
+
+tbody td {
+  /* width to fill the viewport */
+  width: 100vw;
+  min-width: 4rem;
+  max-width: 4rem;
+}
+
+tbody th{
+  width: calc(100% - 12rem);
+}
+
+tr[class="total"]{
+  border-bottom: 4px double #0a0a23;
+  font-weight: bold;
+}
+
+tr[class="total"] th{
+  text-align: left;
+  padding: 0.5rem 0 0.25rem 0.5rem;
+}
+
+tr.total td{
+  text-align: right;
+  padding: 0 0.25rem;
+}
+
+tr.total td:nth-of-type(3){
+ padding-right: 0.5rem;
+}
+
+tr.total:hover {
+background: #99c9ff;
+}
+
+td.current{
+  font-style: italic;
+}
+
+tr.data{
+  background-image: linear-gradient(to bottom, #dfdfe2 1.845rem, white 1.845rem);
+}
+
+tr.data th{
+  text-align: left;
+  padding-top: 0.3rem;
+  padding-left: 0.5rem;
+}
+
+tr.data th .description{
+  display: block;
+  font-style: italic;
+  font-weight: normal;
+  padding: 1rem 0 0.75rem;
+  margin-right: -13.5rem;
+}
+
+
+tr.data td{
+  vertical-align: top;
+  text-align: right;
+  padding: 0.3rem 0.25rem 0;
+}
+
+tr.data td:nth-last-child(){
+  padding: 0.5rem;
+}
